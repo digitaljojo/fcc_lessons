@@ -1,4 +1,5 @@
 //24MAR2022
+//Lesson link : https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/implement-map-on-a-prototype
 
 // The global variable
 const s = [23, 65, 98, 5];
