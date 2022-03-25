@@ -7,7 +7,7 @@ const s = [23, 65, 98, 5];
 Array.prototype.myMap = function(callback) {
   const newArray = [];
   // Only change code below this line
-  this.forEach((a) => newArray.push(callback(a)));
+  this.forEach((a) => newArray.push(callback(a))); //Had to use the hints to solve the challenge. Used W3Schools to break down .map()
   // Only change code above this line
   return newArray;
 };
