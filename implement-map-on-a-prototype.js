@@ -1,3 +1,5 @@
+//24MAR2022
+
 // The global variable
 const s = [23, 65, 98, 5];
 
@@ -12,3 +14,5 @@ Array.prototype.myMap = function(callback) {
 const new_s = s.myMap(function(item) {
   return item * 2;
 });
+
+//Thoughts: had trouble grasping concept that map calls a function on a given object, then pushes into array.
