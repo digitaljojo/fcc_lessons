@@ -14,7 +14,7 @@ Goal is to return any object in the [collection] that has a matching name and va
 //Return key and value of source.
 let comp_key = '';
 Object.keys(source).forEach((x) => comp_key = x);
-
+//Return values of source
 let comp_val = '';
 Object.values(source).forEach((x) => comp_val = x);
 
@@ -24,21 +24,9 @@ Object.values(source).forEach((x) => comp_val = x);
 let test_key = [];
 Object.values(collection).forEach((x) => Object.keys(x).forEach((y) => test_key.push(y)));
 
-//returns keys of collection
+//returns values of collection
 let test_val = [];
 Object.values(collection).forEach((x) => Object.values(x).forEach((y) => test_val.push(y)));
-
-//arr = ; 
-
-
-for(let x in test_key){
-  if(test_val[x] == comp_val[0]){
-    arr.push(test_val[x]);
-  }
-  else{
-    c(test_val[x]);
-  }
-}
 
 
 c(comp_key);
