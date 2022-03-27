@@ -1,44 +1,37 @@
 function whatIsInAName(collection, source) {
-  const arr = [];
-  let c = (x) => console.log(x);
-  // Only change code below this line
+  let arr = [];
+   // Only change code below this line
 
+let c = (x) => console.log(x);
+let source_val  = Object.values(source).length;
+
+for(let x in collection){//cycle through collection
   
-/*
-Goal is to return any object in the [collection] that has a matching name and value pair to the [source]. If everything in the [source] is in [collection][x], return [collection][x].
+  let a= Object.keys(collection[x]);
+  let b= Object.values(collection[x]);
+  let match = 0; //Matching variable resets every iteration. 
 
->>Object.values(collection).forEach((x) => Object.values(x).forEach((y) => c(y)));
->>This will type out each key and value name.
-
-*/
-//Return key and value of source.
-let comp_key = '';
-Object.keys(source).forEach((x) => comp_key = x);
-//Return values of source
-let comp_val = '';
-Object.values(source).forEach((x) => comp_val = x);
-
-// --------------
-
-//returns keys of collection
-let test_key = [];
-Object.values(collection).forEach((x) => Object.keys(x).forEach((y) => test_key.push(y)));
-
-//returns values of collection
-let test_val = [];
-Object.values(collection).forEach((x) => Object.values(x).forEach((y) => test_val.push(y)));
-
-
-c(comp_key);
-c(comp_val);
-
-c(test_key);
-c(test_val)
-c(arr);
-
+    for(let y in source){
+      //Iterates through the keys in the source obj
+      if(a.includes(y)){ 
+        //Checks if the keys are in the object
+        if(b.includes(source[y])){
+            //Checks if the values match for the given keys
+            match += 1;
+            }
+        }
+    }
+    if(match == source_val){ 
+      //If match value is equal to number of sources push it.
+      arr.push(collection[x]);
+    }
+  }
 
   // Only change code above this line
   return arr;
 }
+ 
+//Test Cases
+
 
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
