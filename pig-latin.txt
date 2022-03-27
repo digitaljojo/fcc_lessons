@@ -1,0 +1,64 @@
+function translatePigLatin(str) {
+/*
+1.convert str to array
+2.If arr[0] = [aeiou]
+2.a. Concatenate str + "way"
+3.Until arr[x] =[aeiou],
+3.a. arr.push(arr.(shift))
+3.b. When arr[x] = vowel, join as a string. Concat str + "ay"
+
+
+
+*/
+let cl = (x) => console.log(x)
+const myRegex = /[aeiou]/;
+
+
+let pig = Object.values(str) 
+//Convert str to array
+
+let ver = pig.includes('a') || pig.includes('e') || pig.includes('i') || pig.includes('o') || pig.includes('u');
+
+if(pig[0].match(myRegex)){ 
+  //Vowel as first letter
+  pig = pig.join("");
+  pig = pig + "way";
+  return pig;
+
+  }else{
+    for(let x=0; x<pig.length; x++){
+      //cl(pig[x])
+
+        if(pig[x].match(myRegex)){
+          //cl(pig[x])
+          break;
+
+        }else {
+          if (!ver){
+            cl(pig)
+            break;
+
+          }else{
+            let y= pig.shift();
+          pig.push(y);
+          x -= 1;
+          }
+          
+          
+          
+        //cl("no")
+        }
+    }
+  }
+  
+
+        
+
+
+  pig = pig.join("") + "ay";
+  cl(pig)
+  
+  return pig;
+}
+
+translatePigLatin("consonant");
